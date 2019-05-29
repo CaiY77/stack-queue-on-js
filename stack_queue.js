@@ -1,3 +1,12 @@
+// Stacks and Queues Challenge: Bracket Matching
+//
+// Surely by now you've made an error in your code that seemed impossible to track down.
+// But in the end, the root of all that trouble might have been something as simple as a missing (or extra) curly brace }.
+// This example might be all too relatable (or painful)!
+//
+// One really convenient application for LIFO (Last In First Out) structures is matching brackets.
+// That's because every time you encounter a closing bracket, it needs to match the most recently used open bracket.
+
 class Stack {
   constructor() {
     this.items = []
