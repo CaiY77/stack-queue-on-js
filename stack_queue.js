@@ -53,7 +53,7 @@ const bracketMatcher = (string) => {
   while(!myQueue.isEmpty()){
     let next = myQueue.peek();
 
-    if (next == "(" || next == "{"){
+    if (next == "(" || next == "{" || next == "["){
       myStack.push(next)
       myQueue.dequeue();
     } else if (next == ")"){
@@ -72,6 +72,15 @@ const bracketMatcher = (string) => {
       } else {
         return false;
       }
+    } else if (next == "]"){
+
+      if(myStack.peek() == "["){
+        myStack.pop();
+        myQueue.dequeue();
+      } else {
+        return false;
+      }
+
     } else {
       myQueue.dequeue();
     }
@@ -85,4 +94,4 @@ const bracketMatcher = (string) => {
   }
 }
 
-console.log(bracketMatcher("(({{((hell)o))}}))"))
+console.log(bracketMatcher("(({{(([]hello))}}))"))
